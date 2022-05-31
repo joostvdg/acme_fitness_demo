@@ -38,6 +38,8 @@ spec:
         app: acmefit
         service: order-db
     spec:
+      imagePullSecrets:
+        - name: dockerhub-pull-secret
       containers:
       - name: postgres
         image: postgres:9.5

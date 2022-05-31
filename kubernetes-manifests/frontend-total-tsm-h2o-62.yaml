@@ -1,0 +1,35 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: acmefit-gateway
+  namespace: acmefit
+spec:
+  selector:
+    istio: ingressgateway # use Istio default gateway implementation
+  servers:
+  - port:
+      number: 80
+      name: http-frontend
+      protocol: HTTP
+    hosts:
+    - "acmefit.10.220.7.71.nip.io"
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: acmefit
+  namespace: acmefit
+spec:
+  hosts:
+  - "acmefit.10.220.7.71.nip.io"
+  gateways:
+  - acmefit-gateway
+  http:
+  - match:
+    - uri:
+        prefix: /
+    route:
+    - destination:
+        port:
+          number: 80
+        host: frontend
