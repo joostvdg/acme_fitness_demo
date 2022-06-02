@@ -133,7 +133,7 @@ The external value appears under 'PORT(S)'. It is after the '3000:' and before t
 
 ### Point-of-Sales
 
-Just like the front end service, the Point-of-Sales app functions without any associated datastores. The only prerequisite is that the FrontEnd service is deployed. The manifests in this repository deploy the Point-of-Sales service as a NodePort type for testing purposes. If you're running the Point-of-Sales app on a different Kubernetes cluster, or as a standalone container, you'll have to update the value of `FRONTEND_HOST` (set to `frontend.default.svc.cluster.local` by default) to match the IP or FQDN of the front end service.
+Just like the front end service, the Point-of-Sales app functions without any associated datastores. The only prerequisite is that the FrontEnd service is deployed. The manifests in this repository deploy the Point-of-Sales service as a NodePort type for testing purposes. If you're running the Point-of-Sales app on a different Kubernetes cluster, or as a standalone container, you'll have to update the value of `FRONTEND_HOST` (set to `frontend.acmefit.svc.cluster.local` by default) to match the IP or FQDN of the front end service.
 
 To deploy the service, run the following command:
 

@@ -11,8 +11,8 @@ spec:
       number: 80
       name: http-frontend
       protocol: HTTP
-    hosts:
-    - "acmefit.10.220.7.71.nip.io"
+    hosts: 
+    - "acmefit.10.220.7.70.nip.io"
 ---
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
@@ -21,7 +21,7 @@ metadata:
   namespace: acmefit
 spec:
   hosts:
-  - "acmefit.10.220.7.71.nip.io"
+  - "acmefit.10.220.7.70.nip.io"
   gateways:
   - acmefit-gateway
   http:
